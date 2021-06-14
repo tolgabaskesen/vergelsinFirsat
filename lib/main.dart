@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:vergelsinfirsat/provider/renkNotifier.dart';
 import 'package:vergelsinfirsat/screens/deneme_screen.dart';
 import 'package:vergelsinfirsat/screens/first_screen.dart';
 import 'package:vergelsinfirsat/utils/color.dart';
 
 void main() {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(
+        create: (context) => RenkNotifier(),
+      ),
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
