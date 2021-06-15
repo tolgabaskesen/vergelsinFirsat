@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:vergelsinfirsat/provider/renkNotifier.dart';
 import 'package:vergelsinfirsat/screens/deneme_screen.dart';
 import 'package:vergelsinfirsat/screens/first_screen.dart';
+import 'package:vergelsinfirsat/screens/hesabim_screen.dart';
 import 'package:vergelsinfirsat/utils/color.dart';
 
 void main() {
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         //EKLENECEK HER YENİ SAYFA BURAYA ROUTE EDİLECEK!!!
         "/deneme_screen": (context) => DenemeScreen(),
         "/first_screen": (context) => FirstScreen(),
+        "/hesabim_screen": (context) => HesabimScreen(),
       },
     );
   }
@@ -78,6 +80,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 context,
                 "Giris Ekranı",
                 () => Navigator.pushNamed(context, "/first_screen"),
+              ),
+              sayfaGecis(
+                //Oluşturulan her sayfa için geçişler buraya button olarak aynı şekilde tanımlanacak.
+                context,
+                "Hesabım Ekranı",
+                () => Navigator.pushNamed(context, "/hesabim_screen"),
               ),
             ],
           ),
