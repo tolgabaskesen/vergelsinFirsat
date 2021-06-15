@@ -18,19 +18,21 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: genelAppBar(context, "Adreslerim"),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               kullanici(context, "Miraç Yıldırım"),
               FutureBuilder(
                 future: DefaultAssetBundle.of(context)
                     .loadString("assets/jsonlar/adres.json"),
                 builder: (context, snapshot) {
-                  adresler = jsonDecode(snapshot.data.toString());
+                  final adresler = adreslerimFromJson(snapshot.data.toString());
 
                   return ListView.builder(
                       shrinkWrap: true,
@@ -42,6 +44,21 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
                             adresi: adresler[index].adres);
                       });
                 },
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Yeni Adres Ekle",
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
+                ),
+              ),
+              evekle(context),
+              isekle(context),
+              SizedBox(
+                height: size.height*0.12,
               )
             ],
           ),
@@ -87,6 +104,66 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
                 child: Text("Hesabıma Dön")),
           )
         ],
+      ),
+    );
+  }
+
+  Widget evekle(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {});
+      },
+      child: Card(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset("assets/adres/house.png"),
+                ),
+                Text("Ev Adresi Ekle"),
+              ],
+            ),
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.add_box,
+                  color: anaRenkKoyu,
+                )),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget isekle(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {});
+      },
+      child: Card(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset("assets/adres/work.png"),
+                ),
+                Text("İş Adresi Ekle"),
+              ],
+            ),
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.add_box,
+                  color: anaRenkKoyu,
+                )),
+          ],
+        ),
       ),
     );
   }
