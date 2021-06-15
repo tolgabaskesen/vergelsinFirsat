@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:vergelsinfirsat/classes/adreslerim.dart';
 import 'package:vergelsinfirsat/screens/deneme_screen.dart';
 import 'package:vergelsinfirsat/utils/color.dart';
 import 'package:vergelsinfirsat/widgets/adres_kart.dart';
@@ -13,6 +14,8 @@ class AdreslerimScreen extends StatefulWidget {
 }
 
 class _AdreslerimScreenState extends State<AdreslerimScreen> {
+  late List<Adreslerim> adresler;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +30,7 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
                 future: DefaultAssetBundle.of(context)
                     .loadString("assets/jsonlar/adres.json"),
                 builder: (context, snapshot) {
-                  var adresler = jsonDecode(snapshot.data.toString());
+                  adresler = jsonDecode(snapshot.data.toString());
 
                   return ListView.builder(
                       shrinkWrap: true,
@@ -35,8 +38,8 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
                       itemCount: adresler.length,
                       itemBuilder: (context, index) {
                         return Adres(
-                            tipi: adresler[index]["title"],
-                            adresi: adresler[index]["adres"]);
+                            tipi: adresler[index].title,
+                            adresi: adresler[index].adres);
                       });
                 },
               )
