@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vergelsinfirsat/provider/renkNotifier.dart';
+import 'package:vergelsinfirsat/screens/adreslerim_screen.dart';
 import 'package:vergelsinfirsat/screens/deneme_screen.dart';
 import 'package:vergelsinfirsat/screens/first_screen.dart';
 import 'package:vergelsinfirsat/screens/hesabim_screen.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         "/deneme_screen": (context) => DenemeScreen(),
         "/first_screen": (context) => FirstScreen(),
         "/hesabim_screen": (context) => HesabimScreen(),
+        "/adreslerim_screen": (context) => AdreslerimScreen(),
       },
     );
   }
@@ -86,6 +88,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 context,
                 "Hesabım Ekranı",
                 () => Navigator.pushNamed(context, "/hesabim_screen"),
+              ),
+              sayfaGecis(
+                //Oluşturulan her sayfa için geçişler buraya button olarak aynı şekilde tanımlanacak.
+                context,
+                "Adreslerim Ekranı",
+                () => Navigator.pushNamed(context, "/adreslerim_screen"),
               ),
             ],
           ),
