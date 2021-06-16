@@ -1,7 +1,7 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:vergelsinfirsat/classes/adreslerim.dart';
+import 'package:vergelsinfirsat/provider/seciliadres.dart';
 import 'package:vergelsinfirsat/screens/deneme_screen.dart';
 import 'package:vergelsinfirsat/utils/color.dart';
 import 'package:vergelsinfirsat/widgets/adres_kart.dart';
@@ -19,6 +19,7 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    
     return Scaffold(
       appBar: genelAppBar(context, "Adreslerim"),
       body: Padding(
@@ -29,22 +30,43 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
             children: [
               kullanici(context, "Miraç Yıldırım"),
               FutureBuilder(
-                future: DefaultAssetBundle.of(context)
-                    .loadString("assets/jsonlar/adres.json"),
-                builder: (context, snapshot) {
-                  final adresler = adreslerimFromJson(snapshot.data.toString());
+                  future: DefaultAssetBundle.of(context)
+                      .loadString("assets/jsonlar/adres.json"),
+                  builder: (context, snapshot) {
+                    final adresler =
+                        adreslerimFromJson(snapshot.data.toString());
 
-                  return ListView.builder(
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      itemCount: adresler.length,
-                      itemBuilder: (context, index) {
-                        return Adres(
-                            tipi: adresler[index].title,
-                            adresi: adresler[index].adres);
-                      });
-                },
-              ),
+                    return Consumer<SeciliAdres>(
+                        builder: (context, adres, child) {
+                      var adresProvider =
+                          Provider.of<SeciliAdres>(context, listen: false);
+                      return ListView.builder(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemCount: adresler.length,
+                          itemBuilder: (context, index) {
+                            return GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  for (int i = 0; i < adresler.length; i++) {
+                                    if (i < index) {
+                                      adresProvider.secilmemis();
+                                    } else if (i == index) {
+                                      adresProvider.secilmis();
+                                    } else {
+                                      adresProvider.secilmemis();
+                                    }
+                                  }
+                                });
+                              },
+                              child: Adres(
+                                  tipi: adresler[index].title,
+                                  adresi: adresler[index].adres,
+                                  kontrol: adresProvider.seleceted),
+                            );
+                          });
+                    });
+                  }),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
@@ -58,7 +80,7 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
               evekle(context),
               isekle(context),
               SizedBox(
-                height: size.height*0.12,
+                height: size.height * 0.12,
               )
             ],
           ),
