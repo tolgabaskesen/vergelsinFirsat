@@ -36,10 +36,10 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
                     final adresler =
                         adreslerimFromJson(snapshot.data.toString());
 
-                    return Consumer<SeciliAdres>(
+                    return Consumer<SeciliAdresNotifier>(
                         builder: (context, adres, child) {
                       var adresProvider =
-                          Provider.of<SeciliAdres>(context, listen: false);
+                          Provider.of<SeciliAdresNotifier>(context, listen: false);
                       return ListView.builder(
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),
