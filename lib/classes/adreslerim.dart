@@ -17,7 +17,7 @@ class Adreslerim {
 
     String title;
     String adres;
-    String isselected;
+    bool isselected;
 
     factory Adreslerim.fromJson(Map<String, dynamic> json) => Adreslerim(
         title: json["title"],

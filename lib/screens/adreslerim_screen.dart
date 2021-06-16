@@ -62,7 +62,7 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
                               child: Adres(
                                   tipi: adresler[index].title,
                                   adresi: adresler[index].adres,
-                                  kontrol: adresProvider.seleceted),
+                                  kontrol: adresler[index].isselected),
                             );
                           });
                     });
