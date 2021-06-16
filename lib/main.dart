@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vergelsinfirsat/provider/renkNotifier.dart';
+import 'package:vergelsinfirsat/provider/seciliadres.dart';
 import 'package:vergelsinfirsat/screens/adreslerim_screen.dart';
 import 'package:vergelsinfirsat/screens/deneme_screen.dart';
 import 'package:vergelsinfirsat/screens/first_screen.dart';
@@ -13,6 +14,9 @@ void main() {
     providers: [
       ChangeNotifierProvider(
         create: (context) => RenkNotifier(),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => SeciliAdresNotifier(),
       ),
     ],
     child: MyApp(),
