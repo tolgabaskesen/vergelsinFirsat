@@ -5,7 +5,9 @@ import 'package:vergelsinfirsat/provider/seciliadres.dart';
 import 'package:vergelsinfirsat/screens/adreslerim_screen.dart';
 import 'package:vergelsinfirsat/screens/deneme_screen.dart';
 import 'package:vergelsinfirsat/screens/first_screen.dart';
+import 'package:vergelsinfirsat/screens/hesabim.dart';
 import 'package:vergelsinfirsat/screens/hesabim_screen.dart';
+import 'package:vergelsinfirsat/screens/iletisim_tercihleri.dart';
 import 'package:vergelsinfirsat/utils/color.dart';
 
 void main() {
@@ -42,6 +44,8 @@ class MyApp extends StatelessWidget {
         "/first_screen": (context) => FirstScreen(),
         "/hesabim_screen": (context) => HesabimScreen(),
         "/adreslerim_screen": (context) => AdreslerimScreen(),
+        "/iletisim_tercihleri": (context) => IletisimTercihleri(),
+        "/hesabim": (context) => ProfileScreen(),
       },
     );
   }
@@ -98,6 +102,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 context,
                 "Adreslerim Ekranı",
                 () => Navigator.pushNamed(context, "/adreslerim_screen"),
+              ),
+              sayfaGecis(
+                //Oluşturulan her sayfa için geçişler buraya button olarak aynı şekilde tanımlanacak.
+                context,
+                "İletişim Tercihlerim",
+                () => Navigator.pushNamed(context, "/iletisim_tercihleri"),
+              ),
+              sayfaGecis(
+                //Oluşturulan her sayfa için geçişler buraya button olarak aynı şekilde tanımlanacak.
+                context,
+                "Hesabım",
+                () => Navigator.pushNamed(context, "/hesabim"),
               ),
             ],
           ),

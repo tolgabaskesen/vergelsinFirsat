@@ -225,29 +225,56 @@ PreferredSizeWidget? genelAppBar(BuildContext context, String title) {
     actions: [
       GestureDetector(
         child: Container(
-          width: size.width * 0.2,
-          margin: EdgeInsets.only(
-              top: size.height * 0.02, bottom: size.height * 0.02),
-          decoration: BoxDecoration(
-              color: ikincilRenk,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(100),
-                bottomLeft: Radius.circular(100),
-              )),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 8),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.shopping_bag_rounded,
-                  size: size.width * 0.04,
+          child: Stack(
+            children: [
+              Container(
+                width: size.width * 0.15,
+                height: size.height * 0.1,
+                margin: EdgeInsets.only(
+                    top: size.height * 0.01,
+                    bottom: size.height * 0.01,
+                    left: size.width * 0.05),
+                decoration: BoxDecoration(
+                    color: ikincilRenk,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(100),
+                      bottomLeft: Radius.circular(100),
+                    )),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: size.width * 0.04,
+                      ),
+                      Icon(
+                        Icons.shopping_bag_outlined,
+                        size: size.width * 0.07,
+                      ),
+                    ],
+                  ),
                 ),
-                Text(
-                  "500.00₺",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              Container(
+                alignment: Alignment.center,
+                width: size.height * 0.03,
+                height: size.height * 0.03,
+                margin: EdgeInsets.only(
+                    top: size.height * 0.028,
+                    bottom: size.height * 0.01,
+                    left: size.width * 0.05),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(100),
+                    )),
+                child: Text(
+                  "0",
+                  style: TextStyle(color: Colors.black),
+                  textAlign: TextAlign.center,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       )

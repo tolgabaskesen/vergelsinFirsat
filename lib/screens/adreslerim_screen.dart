@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vergelsinfirsat/classes/adreslerim.dart';
@@ -19,7 +20,7 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    
+
     return Scaffold(
       appBar: genelAppBar(context, "Adreslerim"),
       body: Padding(
@@ -28,7 +29,55 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              kullanici(context, "Miraç Yıldırım"),
+              Container(
+                margin: EdgeInsets.only(left: 8, right: 8),
+                height: size.height * 0.07,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                    ),
+                    color: Colors.white),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Image.asset("assets/icons/profilephoto.png"),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Text("Miraç Yıldırım",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 16)),
+                          ),
+                        ],
+                      ),
+                      GestureDetector(
+                        child: Container(
+                          margin: EdgeInsets.only(
+                              top: size.height * 0.015,
+                              bottom: size.height * 0.015),
+                          decoration: BoxDecoration(
+                              color: ikincilRenk,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(100))),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: AutoSizeText(
+                              "Hesabıma Dön",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
               FutureBuilder(
                   future: DefaultAssetBundle.of(context)
                       .loadString("assets/jsonlar/adres.json"),
@@ -38,8 +87,9 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
 
                     return Consumer<SeciliAdresNotifier>(
                         builder: (context, adres, child) {
-                      var adresProvider =
-                          Provider.of<SeciliAdresNotifier>(context, listen: false);
+                      var adresProvider = Provider.of<SeciliAdresNotifier>(
+                          context,
+                          listen: false);
                       return ListView.builder(
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),
