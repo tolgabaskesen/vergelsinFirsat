@@ -77,12 +77,15 @@ class _AdresEkleState extends State<AdresEkle> {
               ),
             ),
             adres(context),
-            Row(
-              children: [
-                binaNo(context),
-                kat(context),
-                daire(context),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(bottom:8.0),
+              child: Row(
+                children: [
+                  binaNo(context),
+                  kat(context),
+                  daire(context),
+                ],
+              ),
             ),
             Container(
               width: size.width * 0.95,
