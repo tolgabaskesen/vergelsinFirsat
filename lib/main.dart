@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vergelsinfirsat/provider/renkNotifier.dart';
 import 'package:vergelsinfirsat/provider/seciliadres.dart';
+import 'package:vergelsinfirsat/screens/adresekle_screen.dart';
 import 'package:vergelsinfirsat/screens/adreslerim_screen.dart';
 import 'package:vergelsinfirsat/screens/deneme_screen.dart';
 import 'package:vergelsinfirsat/screens/first_screen.dart';
@@ -9,6 +10,7 @@ import 'package:vergelsinfirsat/screens/hesabim.dart';
 import 'package:vergelsinfirsat/screens/hesabim_screen.dart';
 import 'package:vergelsinfirsat/screens/iletisim_tercihleri.dart';
 import 'package:vergelsinfirsat/utils/color.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,6 +48,7 @@ class MyApp extends StatelessWidget {
         "/adreslerim_screen": (context) => AdreslerimScreen(),
         "/iletisim_tercihleri": (context) => IletisimTercihleri(),
         "/hesabim": (context) => ProfileScreen(),
+        "/adresekle": (context) => AdresEkle(),
       },
     );
   }
@@ -114,6 +117,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 context,
                 "Hesabım",
                 () => Navigator.pushNamed(context, "/hesabim"),
+              ),
+              sayfaGecis(
+                //Oluşturulan her sayfa için geçişler buraya button olarak aynı şekilde tanımlanacak.
+                context,
+                "Adres Ekle Sayfası",
+                () => Navigator.pushNamed(context, "/adresekle"),
               ),
             ],
           ),

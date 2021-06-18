@@ -35,6 +35,7 @@ dependencies:
   flutter_switch: ^0.3.1
   google_maps_flutter: ^2.0.6
   provider: ^5.0.0
+  syncfusion_flutter_maps: ^19.1.69-beta
 
 
 dev_dependencies:
@@ -67,6 +68,7 @@ flutter:
     - assets/social/
     - assets/hesabim/
     - assets/jsonlar/adres.json
+   
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
