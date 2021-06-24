@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Lorem Ipsum",
+        "number": "456456455546***456474564**45678",
+        "isselected": false,
+        "isVisa": false
+    },
+    {
+        "title": "Lorem Ipsum",
+        "number": "456456455546***456474564**45678",
+        "isselected": true,
+        "isVisa": true
+    },
+    {
+        "title": "Lorem Ipsum",
+        "number": "456456455546***456474564**45678",
+        "isselected": false,
+        "isVisa": false
+    },
+    {
+        "title": "Lorem Ipsum",
+        "number": "456456455546***456474564**45678",
+        "isselected": false,
+        "isVisa": true
+    },
+    {
+        "title": "Lorem Ipsum",
+        "number": "456456455546***456474564**45678",
+        "isselected": false,
+        "isVisa": true
+    }
+]

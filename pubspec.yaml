@@ -67,7 +67,7 @@ flutter:
     - assets/promotion/
     - assets/social/
     - assets/hesabim/
-    - assets/jsonlar/adres.json
+    - assets/jsonlar/
    
 
   # An image asset can refer to one or more resolution-specific "variants", see

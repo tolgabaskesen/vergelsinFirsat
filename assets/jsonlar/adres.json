@@ -1,31 +1,27 @@
 [
     {
-        "title":"EV ADRESİ",
-        "adres":"Eryakut Mahallesi Başaran Sokak No:45/17 Esenyurt/İstanbul",
-        "isselected":false
+        "title": "EV ADRESİ",
+        "adres": "Eryakut Mahallesi Başaran Sokak No:45/17 Esenyurt/İstanbul",
+        "isselected": false
     },
     {
-        "title":"İŞ ADRESİ",
-        "adres":"Eryakut Mahallesi Başaran Sokak No:45/17 Esenyurt/İstanbul",
-        "isselected":false
-
+        "title": "İŞ ADRESİ",
+        "adres": "Eryakut Mahallesi Başaran Sokak No:45/17 Esenyurt/İstanbul",
+        "isselected": true
     },
     {
-        "title":"EV ADRESİ",
-        "adres":"Eryakut Mahallesi Başaran Sokak No:45/17 Esenyurt/İstanbul",
-        "isselected":false
-
+        "title": "EV ADRESİ",
+        "adres": "Eryakut Mahallesi Başaran Sokak No:45/17 Esenyurt/İstanbul",
+        "isselected": false
     },
     {
-        "title":"İŞ ADRESİ",
-        "adres":"Eryakut Mahallesi Başaran Sokak No:45/17 Esenyurt/İstanbul",
-        "isselected":false
-
+        "title": "İŞ ADRESİ",
+        "adres": "Eryakut Mahallesi Başaran Sokak No:45/17 Esenyurt/İstanbul",
+        "isselected": false
     },
     {
-        "title":"EV ADRESİ",
-        "adres":"Eryakut Mahallesi Başaran Sokak No:45/17 Esenyurt/İstanbul",
-        "isselected":false
-
+        "title": "EV ADRESİ",
+        "adres": "Eryakut Mahallesi Başaran Sokak No:45/17 Esenyurt/İstanbul",
+        "isselected": false
     }
 ]

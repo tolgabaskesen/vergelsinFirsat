@@ -9,8 +9,8 @@ import 'package:vergelsinfirsat/screens/first_screen.dart';
 import 'package:vergelsinfirsat/screens/hesabim.dart';
 import 'package:vergelsinfirsat/screens/hesabim_screen.dart';
 import 'package:vergelsinfirsat/screens/iletisim_tercihleri.dart';
+import 'package:vergelsinfirsat/screens/odemeyontemi_screen.dart';
 import 'package:vergelsinfirsat/utils/color.dart';
-
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -49,6 +49,7 @@ class MyApp extends StatelessWidget {
         "/iletisim_tercihleri": (context) => IletisimTercihleri(),
         "/hesabim": (context) => ProfileScreen(),
         "/adresekle": (context) => AdresEkle(),
+        "/odemeyontemi_screen": (context) => OdemeYontemiScreen(),
       },
     );
   }
@@ -123,6 +124,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 context,
                 "Adres Ekle Sayfası",
                 () => Navigator.pushNamed(context, "/adresekle"),
+              ),
+              sayfaGecis(
+                //Oluşturulan her sayfa için geçişler buraya button olarak aynı şekilde tanımlanacak.
+                context,
+                "Ödeme Yöntemleri",
+                () => Navigator.pushNamed(context, "/odemeyontemi_screen"),
               ),
             ],
           ),
