@@ -76,9 +76,12 @@ class _AdresEkleState extends State<AdresEkle> {
                 children: [acilirMahalle(context), postaKodu(context)],
               ),
             ),
-            adres(context),
             Padding(
-              padding: const EdgeInsets.only(bottom:8.0),
+              padding: const EdgeInsets.fromLTRB(0, 0, 4, 0),
+              child: adres(context),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(2, 0, 0, 8),
               child: Row(
                 children: [
                   binaNo(context),
@@ -214,7 +217,7 @@ class _AdresEkleState extends State<AdresEkle> {
       alignment: Alignment.center,
       margin: EdgeInsets.fromLTRB(8, 8, 0, 8),
       width: size.width * 0.3,
-      height: size.height*0.07,
+      height: size.height * 0.07,
       child: Padding(
         padding: EdgeInsets.fromLTRB(3, 0, 0, 0),
         child: TextField(
@@ -240,7 +243,7 @@ class _AdresEkleState extends State<AdresEkle> {
       alignment: Alignment.center,
       margin: EdgeInsets.fromLTRB(8, 8, 8, 8),
       width: size.width * 0.3,
-      height: size.height*0.07,
+      height: size.height * 0.07,
       child: Padding(
         padding: EdgeInsets.fromLTRB(3, 0, 0, 0),
         child: TextField(
@@ -266,7 +269,7 @@ class _AdresEkleState extends State<AdresEkle> {
       alignment: Alignment.center,
       margin: EdgeInsets.fromLTRB(0, 8, 8, 8),
       width: size.width * 0.3,
-      height: size.height*0.07,
+      height: size.height * 0.07,
       child: Padding(
         padding: EdgeInsets.fromLTRB(3, 0, 0, 0),
         child: TextField(
