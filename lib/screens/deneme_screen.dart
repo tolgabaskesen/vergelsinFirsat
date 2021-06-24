@@ -25,8 +25,144 @@ class _DenemeScreenState extends State<DenemeScreen> {
         color: arkaplanRenk,
       ),
       bottomSheet: navSheet(context),
+      floatingActionButton: floatingButton(context),
     );
   }
+}
+
+Widget floatingButton(BuildContext context) {
+  Size size = MediaQuery.of(context).size;
+  return Consumer<RenkNotifier>(builder: (context, renk, child) {
+    var renkProvider = Provider.of<RenkNotifier>(context, listen: false);
+    return (renkProvider.isOpen)
+        ? Padding(
+            padding: EdgeInsets.only(
+                left: size.width * 0.07, bottom: size.height * 0.10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  width: size.width * 0.28,
+                  height: size.height * 0.07,
+                  decoration: BoxDecoration(
+                      color: ikincilRenk,
+                      boxShadow: [
+                        BoxShadow(
+                          color: anaRenk,
+                          offset: Offset(0.0, 0.5), //(x,y)
+                          blurRadius: 1.0,
+                        ),
+                      ],
+                      borderRadius: BorderRadius.all(Radius.circular(8))),
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          width: size.width * 0.1,
+                          height: size.height * 0.07,
+                          child: Image.asset(
+                            "assets/bottommenu/market.png",
+                          ),
+                        ),
+                        Container(
+                          width: size.width * 0.18,
+                          height: size.height * 0.07,
+                          alignment: Alignment.center,
+                          child: AutoSizeText(
+                            "Vergelsin\nMarket",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  width: size.width * 0.28,
+                  height: size.height * 0.07,
+                  decoration: BoxDecoration(
+                      color: ikincilRenk,
+                      boxShadow: [
+                        BoxShadow(
+                          color: anaRenk,
+                          offset: Offset(0.0, 0.5), //(x,y)
+                          blurRadius: 1.0,
+                        ),
+                      ],
+                      borderRadius: BorderRadius.all(Radius.circular(8))),
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          width: size.width * 0.1,
+                          height: size.height * 0.07,
+                          child: Image.asset(
+                            "assets/bottommenu/yemek.png",
+                          ),
+                        ),
+                        Container(
+                          width: size.width * 0.18,
+                          height: size.height * 0.07,
+                          alignment: Alignment.center,
+                          child: AutoSizeText(
+                            "Vergelsin\nYemek",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  width: size.width * 0.28,
+                  height: size.height * 0.07,
+                  decoration: BoxDecoration(
+                      color: ikincilRenk,
+                      boxShadow: [
+                        BoxShadow(
+                          color: anaRenk,
+                          offset: Offset(0.0, 0.5), //(x,y)
+                          blurRadius: 1.0,
+                        ),
+                      ],
+                      borderRadius: BorderRadius.all(Radius.circular(8))),
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          width: size.width * 0.1,
+                          height: size.height * 0.07,
+                          child: Image.asset(
+                            "assets/bottommenu/firsat.png",
+                          ),
+                        ),
+                        Container(
+                          width: size.width * 0.18,
+                          height: size.height * 0.07,
+                          alignment: Alignment.center,
+                          child: AutoSizeText(
+                            "Vergelsin\nFirsat",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          )
+        : Container();
+  });
 }
 
 Widget navSheet(BuildContext context) {
@@ -192,7 +328,13 @@ Widget navSheet(BuildContext context) {
               ),
               decoration: BoxDecoration(
                 color: arkaplanRenk,
-                borderRadius: BorderRadius.all(Radius.circular(100)),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(100),
+                ),
+                border: Border.all(
+                  color:
+                      (renkProvider.isOpen) ? ikincilRenk : Colors.transparent,
+                ),
               ),
               child: Container(
                 alignment: Alignment.center,
@@ -203,7 +345,7 @@ Widget navSheet(BuildContext context) {
                   borderRadius: BorderRadius.all(Radius.circular(100)),
                 ),
                 child: GestureDetector(
-                  onTap: () => print("tolga"),
+                  onTap: () => renkProvider.setisOpen(),
                   child: Image.asset("assets/bottom_bar_icon.png"),
                 ),
               )),
