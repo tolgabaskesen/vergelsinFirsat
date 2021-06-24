@@ -1,8 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+
 import 'package:vergelsinfirsat/classes/adreslerim.dart';
-import 'package:vergelsinfirsat/provider/seciliadres.dart';
+
 import 'package:vergelsinfirsat/screens/deneme_screen.dart';
 import 'package:vergelsinfirsat/utils/color.dart';
 import 'package:vergelsinfirsat/widgets/adres_kart.dart';
@@ -85,29 +85,14 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
                     final adresler =
                         adreslerimFromJson(snapshot.data.toString());
 
-                    return Consumer<SeciliAdresNotifier>(
-                        builder: (context, adres, child) {
-                      var adresProvider = Provider.of<SeciliAdresNotifier>(
-                          context,
-                          listen: false);
-                      return ListView.builder(
+                    return  ListView.builder(
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),
                           itemCount: adresler.length,
                           itemBuilder: (context, index) {
                             return GestureDetector(
                               onTap: () {
-                                setState(() {
-                                  for (int i = 0; i < adresler.length; i++) {
-                                    if (i < index) {
-                                      adresProvider.secilmemis();
-                                    } else if (i == index) {
-                                      adresProvider.secilmis();
-                                    } else {
-                                      adresProvider.secilmemis();
-                                    }
-                                  }
-                                });
+                               //Bu kısımda adresi değiştiren api isteği olacak
                               },
                               child: Adres(
                                   tipi: adresler[index].title,
@@ -115,7 +100,7 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
                                   kontrol: adresler[index].isselected),
                             );
                           });
-                    });
+                  
                   }),
               Padding(
                 padding: const EdgeInsets.all(8.0),

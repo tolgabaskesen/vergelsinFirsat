@@ -5,7 +5,11 @@ class Adres extends StatefulWidget {
   final String tipi;
   final String adresi;
   final bool kontrol;
-  const Adres({Key? key, required this.tipi, required this.adresi, required this.kontrol})
+  const Adres(
+      {Key? key,
+      required this.tipi,
+      required this.adresi,
+      required this.kontrol})
       : super(key: key);
 
   @override
@@ -24,7 +28,6 @@ class _AdresState extends State<Adres> {
                 ? "assets/adres/work.png"
                 : "assets/adres/house.png"),
           ),
-          /* Icon(Icons.home), */
           Expanded(
             child: ListTile(
               title: Flexible(
