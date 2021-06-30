@@ -69,6 +69,7 @@ flutter:
     - assets/hesabim/
     - assets/jsonlar/
     - assets/bottommenu/
+    - assets/alertpopup/
    
 
   # An image asset can refer to one or more resolution-specific "variants", see

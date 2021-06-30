@@ -10,6 +10,7 @@ import 'package:vergelsinfirsat/screens/hesabim.dart';
 import 'package:vergelsinfirsat/screens/hesabim_screen.dart';
 import 'package:vergelsinfirsat/screens/iletisim_tercihleri.dart';
 import 'package:vergelsinfirsat/screens/odemeyontemi_screen.dart';
+import 'package:vergelsinfirsat/screens/popup_screen.dart';
 import 'package:vergelsinfirsat/utils/color.dart';
 
 void main() {
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
         "/hesabim": (context) => ProfileScreen(),
         "/adresekle": (context) => AdresEkle(),
         "/odemeyontemi_screen": (context) => OdemeYontemiScreen(),
+        "/popup_screen": (context) => PopupScreen(),
       },
     );
   }
@@ -130,6 +132,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 context,
                 "Ödeme Yöntemleri",
                 () => Navigator.pushNamed(context, "/odemeyontemi_screen"),
+              ),
+              sayfaGecis(
+                //Oluşturulan her sayfa için geçişler buraya button olarak aynı şekilde tanımlanacak.
+                context,
+                "Popup Screen",
+                () => Navigator.pushNamed(context, "/popup_screen"),
+              ),
+              Container(
+                child: Text(
+                  "2.EKRANLAR, ALT BÖLÜM",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                ),
+              ),
+              sayfaGecis(
+                //Oluşturulan her sayfa için geçişler buraya button olarak aynı şekilde tanımlanacak.
+                context,
+                "Popup Screen",
+                () => Navigator.pushNamed(context, "/popup_screen"),
               ),
             ],
           ),
