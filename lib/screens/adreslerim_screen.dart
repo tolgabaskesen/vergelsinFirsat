@@ -99,10 +99,11 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
                               onTap: () {
                                 //Bu kısımda adresi değiştiren api isteği olacak
                               },
-                              child: Adres(
-                                  tipi: adresler[index].title,
-                                  adresi: adresler[index].adres,
-                                  kontrol: adresler[index].isselected),
+                              child: adresKart(
+                                  adresler[index].title,
+                                  adresler[index].adres,
+                                  adresler[index].isselected,
+                                  context),
                             );
                           });
                     } else {
@@ -231,4 +232,43 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
       ),
     );
   }
+}
+
+Widget adresKart(
+    String tipi, String adresi, bool kontrol, BuildContext context) {
+  return Card(
+    child: Row(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(tipi == "İŞ ADRESİ"
+              ? "assets/adres/work.png"
+              : "assets/adres/house.png"),
+        ),
+        Expanded(
+          child: ListTile(
+            title: Flexible(
+                child: Text(
+              tipi,
+              style: TextStyle(
+                  color: Colors.grey[700],
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold),
+            )),
+            subtitle: Flexible(
+                child: Text(
+              adresi,
+              style: TextStyle(color: Colors.grey, fontSize: 12),
+            )),
+            trailing: kontrol == false
+                ? Icon(Icons.delete)
+                : Icon(
+                    Icons.check_circle,
+                    color: ikincilRenk,
+                  ),
+          ),
+        )
+      ],
+    ),
+  );
 }
