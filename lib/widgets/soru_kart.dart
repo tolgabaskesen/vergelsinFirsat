@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vergelsinfirsat/utils/color.dart';
 
 class Soru extends StatefulWidget {
   final String soru;
@@ -16,15 +17,16 @@ class _SoruState extends State<Soru> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: const BorderRadius.all(
+          Radius.circular(8.0),
+        ),
+      ),
+      color: acma == false ? anaRenkKoyu : ikincilRenk,
       child: Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                widget.soru,
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
               IconButton(
                   onPressed: () {
                     setState(() {
@@ -36,9 +38,17 @@ class _SoruState extends State<Soru> {
                     });
                   },
                   icon: Icon(
-                    acma == false ? Icons.add : Icons.remove,
-                    size: size.width * 0.04,
-                  ))
+                    acma == false ? Icons.add_rounded : Icons.remove,
+                    size: size.width * 0.05,
+                    color: acma == false ? Colors.orange : Colors.white,
+                  )),
+              Text(
+                widget.soru,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                    color: Colors.white),
+              ),
             ],
           ),
           kontrol(context)
@@ -50,17 +60,20 @@ class _SoruState extends State<Soru> {
   Widget kontrol(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     if (acma == true) {
-      return Column(
-        children: [
-          Divider(),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(widget.cevap),
-          ),
-          SizedBox(
-            height: size.height * 0.04,
-          )
-        ],
+      return Container(
+        color: Colors.white,
+        child: Column(
+          children: [
+            Divider(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(widget.cevap),
+            ),
+            SizedBox(
+              height: size.height * 0.04,
+            )
+          ],
+        ),
       );
     } else {
       return Container();
