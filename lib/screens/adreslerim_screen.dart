@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
@@ -82,17 +84,20 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
                   future: DefaultAssetBundle.of(context)
                       .loadString("assets/jsonlar/adres.json"),
                   builder: (context, snapshot) {
-                    final adresler =
-                        adreslerimFromJson(snapshot.data.toString());
+                    log(snapshot.connectionState.toString());
+                    if (snapshot.connectionState == ConnectionState.done &&
+                        snapshot.hasData) {
+                      final adresler =
+                          adreslerimFromJson(snapshot.data.toString());
 
-                    return  ListView.builder(
+                      return ListView.builder(
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),
                           itemCount: adresler.length,
                           itemBuilder: (context, index) {
                             return GestureDetector(
                               onTap: () {
-                               //Bu kısımda adresi değiştiren api isteği olacak
+                                //Bu kısımda adresi değiştiren api isteği olacak
                               },
                               child: Adres(
                                   tipi: adresler[index].title,
@@ -100,7 +105,9 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
                                   kontrol: adresler[index].isselected),
                             );
                           });
-                  
+                    } else {
+                      return Center(child: CircularProgressIndicator());
+                    }
                   }),
               Padding(
                 padding: const EdgeInsets.all(8.0),
