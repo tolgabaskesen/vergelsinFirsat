@@ -77,28 +77,33 @@ class _OdemeYontemiScreenState extends State<OdemeYontemiScreen> {
                   future: DefaultAssetBundle.of(context)
                       .loadString("assets/jsonlar/kartbilgileri.json"),
                   builder: (context, snapshot) {
-                    final kartbilgileri =
-                        kartBilgileriFromJson(snapshot.data.toString());
+                    if (snapshot.connectionState == ConnectionState.done &&
+                        snapshot.hasData) {
+                      final kartbilgileri =
+                          kartBilgileriFromJson(snapshot.data.toString());
 
-                    return ListView.builder(
-                        shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
-                        itemCount: kartbilgileri.length,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            height: size.height * 0.097,
-                            child: GestureDetector(
-                              onTap: () {
-                                //Bu kısımda api isteği olacak onaylı kartı değiştirmek için
-                              },
-                              child: OdemeKart(
-                                  isvisa: kartbilgileri[index].isVisa,
-                                  isSelected: kartbilgileri[index].isselected,
-                                  title: kartbilgileri[index].title,
-                                  number: kartbilgileri[index].number),
-                            ),
-                          );
-                        });
+                      return ListView.builder(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemCount: kartbilgileri.length,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              height: size.height * 0.097,
+                              child: GestureDetector(
+                                onTap: () {
+                                  //Bu kısımda api isteği olacak onaylı kartı değiştirmek için
+                                },
+                                child: OdemeKart(
+                                    isvisa: kartbilgileri[index].isVisa,
+                                    isSelected: kartbilgileri[index].isselected,
+                                    title: kartbilgileri[index].title,
+                                    number: kartbilgileri[index].number),
+                              ),
+                            );
+                          });
+                    } else {
+                      return Center(child: CircularProgressIndicator());
+                    }
                   }),
             ),
             Padding(
