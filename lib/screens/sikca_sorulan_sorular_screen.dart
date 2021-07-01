@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vergelsinfirsat/classes/sorularim.dart';
 import 'package:vergelsinfirsat/screens/deneme_screen.dart';
+import 'package:vergelsinfirsat/utils/color.dart';
 import 'package:vergelsinfirsat/widgets/soru_kart.dart';
 
 class SikcaSorulanSorularScreen extends StatefulWidget {
@@ -19,6 +20,7 @@ class _SikcaSorulanSorularScreenState extends State<SikcaSorulanSorularScreen> {
       appBar: AppBar(
         title: Text("Sıkça Sorulan Sorular"),
         centerTitle: true,
+        backgroundColor: anaRenkKoyu,
       ),
       body: SingleChildScrollView(
         child: Column(

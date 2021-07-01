@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:vergelsinfirsat/screens/deneme_screen.dart';
+import 'package:vergelsinfirsat/utils/color.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class HakkimizdaScreen extends StatefulWidget {
@@ -72,6 +73,7 @@ class _HakkimizdaScreenState extends State<HakkimizdaScreen> {
       appBar: AppBar(
         title: Text("Hakkımızda"),
         centerTitle: true,
+         backgroundColor: anaRenkKoyu,
       ),
       body: SingleChildScrollView(
         child: Column(
