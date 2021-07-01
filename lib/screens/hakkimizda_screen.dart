@@ -74,7 +74,6 @@ class _HakkimizdaScreenState extends State<HakkimizdaScreen> {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        //physics: NeverScrollableScrollPhysics(), // SİL ŞURAYI SOKUK NEVER SCROLLABLE = ASLA KAYDIRILAMAZ
         child: Column(
           children: [
             Padding(
@@ -140,6 +139,49 @@ class _HakkimizdaScreenState extends State<HakkimizdaScreen> {
               child: Text(
                   "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source."),
             ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 16, 8, 8),
+              child: Container(
+                alignment: Alignment.bottomLeft,
+                child: Text("Basında Biz",
+                    textAlign: TextAlign.left,
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
+              child: Container(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  "Lorem Ipsum is simply dummy text",
+                  textAlign: TextAlign.left,
+                ),
+              ),
+            ),
+            Container(
+              
+                height: size.height * 0.42,
+                child: GridView.count(
+                  physics: NeverScrollableScrollPhysics(),
+                  crossAxisCount: 3,
+                  primary: false,
+                  padding: EdgeInsets.all(4),
+                  children: <Widget>[
+                    haber(context, "Hürriyet", "assets/adres/gazete.jpg",
+                        "11.02.2021"),
+                    haber(context, "Hürriyet", "assets/adres/gazete.jpg",
+                        "11.02.2021"),
+                    haber(context, "Hürriyet", "assets/adres/gazete.jpg",
+                        "11.02.2021"),
+                    haber(context, "Hürriyet", "assets/adres/gazete.jpg",
+                        "11.02.2021"),
+                    haber(context, "Hürriyet", "assets/adres/gazete.jpg",
+                        "11.02.2021"),
+                    haber(context, "Hürriyet", "assets/adres/gazete.jpg",
+                        "11.02.2021"),
+                  ],
+                )),
             SizedBox(
               height: size.height * 0.15,
             ),
@@ -147,6 +189,38 @@ class _HakkimizdaScreenState extends State<HakkimizdaScreen> {
         ),
       ),
       bottomSheet: navSheet(context),
+    );
+  }
+
+  Widget haber(BuildContext context, String adi, String asset, String tarih) {
+    Size size = MediaQuery.of(context).size;
+    return Padding(
+      padding: const EdgeInsets.all(6.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: Container(
+         
+          height: size.height * 0.28,
+          alignment: Alignment.center,
+          child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                  height: size.height * 0.1,
+                  width: size.width * 0.2,
+                  child: Image.asset(asset)),
+              Column(
+                children: [
+                  Text(
+                    adi,
+                     style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(tarih, style: TextStyle(fontSize: 10, color: Colors.grey)),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
