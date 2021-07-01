@@ -36,6 +36,8 @@ dependencies:
   google_maps_flutter: ^2.0.6
   provider: ^5.0.0
   syncfusion_flutter_maps: ^19.1.69-beta
+  youtube_player_flutter: ^8.0.0
+  carousel_slider: ^4.0.0
 
 
 dev_dependencies:
