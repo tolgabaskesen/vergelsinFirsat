@@ -93,7 +93,7 @@ class _HakkimizdaScreenState extends State<HakkimizdaScreen> {
             ),
             Container(
               height: size.height * 0.18,
-              width: size.width,
+              width: size.width * 0.9,
               child: CarouselSlider(
                 options: CarouselOptions(
                   autoPlay: false,
@@ -134,6 +134,11 @@ class _HakkimizdaScreenState extends State<HakkimizdaScreen> {
                       fontWeight: FontWeight.bold,
                     )),
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                  "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source."),
             ),
             SizedBox(
               height: size.height * 0.1,
