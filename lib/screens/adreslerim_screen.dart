@@ -247,19 +247,17 @@ Widget adresKart(
         ),
         Expanded(
           child: ListTile(
-            title: Flexible(
-                child: Text(
+            title: Text(
               tipi,
               style: TextStyle(
                   color: Colors.grey[700],
                   fontSize: 15,
                   fontWeight: FontWeight.bold),
-            )),
-            subtitle: Flexible(
-                child: Text(
+            ),
+            subtitle: Text(
               adresi,
               style: TextStyle(color: Colors.grey, fontSize: 12),
-            )),
+            ),
             trailing: kontrol == false
                 ? Icon(Icons.delete)
                 : Icon(
