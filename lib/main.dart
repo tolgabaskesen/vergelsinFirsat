@@ -11,6 +11,7 @@ import 'package:vergelsinfirsat/screens/hesabim_screen.dart';
 import 'package:vergelsinfirsat/screens/iletisim_tercihleri.dart';
 import 'package:vergelsinfirsat/screens/odemeyontemi_screen.dart';
 import 'package:vergelsinfirsat/screens/popup_screen.dart';
+import 'package:vergelsinfirsat/screens/uruniptal_screen.dart';
 import 'package:vergelsinfirsat/utils/color.dart';
 
 void main() {
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
         "/adresekle": (context) => AdresEkle(),
         "/odemeyontemi_screen": (context) => OdemeYontemiScreen(),
         "/popup_screen": (context) => PopupScreen(),
+        "/uruniptali_screen": (context) => UrunIptali(),
       },
     );
   }
@@ -148,8 +150,8 @@ class _MyHomePageState extends State<MyHomePage> {
               sayfaGecis(
                 //Oluşturulan her sayfa için geçişler buraya button olarak aynı şekilde tanımlanacak.
                 context,
-                "Popup Screen",
-                () => Navigator.pushNamed(context, "/popup_screen"),
+                "Ürün İptal Ekranı",
+                () => Navigator.pushNamed(context, "/uruniptali_screen"),
               ),
             ],
           ),
