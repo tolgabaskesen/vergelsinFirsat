@@ -232,3 +232,40 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
     );
   }
 }
+
+Widget adresKart(
+    String tipi, String adresi, bool kontrol, BuildContext context) {
+  return Card(
+    child: Row(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(tipi == "İŞ ADRESİ"
+              ? "assets/adres/work.png"
+              : "assets/adres/house.png"),
+        ),
+        Expanded(
+          child: ListTile(
+            title: Text(
+              tipi,
+              style: TextStyle(
+                  color: Colors.grey[700],
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold),
+            ),
+            subtitle: Text(
+              adresi,
+              style: TextStyle(color: Colors.grey, fontSize: 12),
+            ),
+            trailing: kontrol == false
+                ? Icon(Icons.delete)
+                : Icon(
+                    Icons.check_circle,
+                    color: ikincilRenk,
+                  ),
+          ),
+        )
+      ],
+    ),
+  );
+}
