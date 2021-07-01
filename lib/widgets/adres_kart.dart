@@ -30,19 +30,17 @@ class _AdresState extends State<Adres> {
           ),
           Expanded(
             child: ListTile(
-              title: Flexible(
-                  child: Text(
+              title: Text(
                 widget.tipi,
                 style: TextStyle(
                     color: Colors.grey[700],
                     fontSize: 15,
                     fontWeight: FontWeight.bold),
-              )),
-              subtitle: Flexible(
-                  child: Text(
+              ),
+              subtitle: Text(
                 widget.adresi,
                 style: TextStyle(color: Colors.grey, fontSize: 12),
-              )),
+              ),
               trailing: widget.kontrol == false
                   ? Icon(Icons.delete)
                   : Icon(

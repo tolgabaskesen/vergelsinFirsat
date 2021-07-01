@@ -1,4 +1,4 @@
-import 'dart:developer';
+
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -84,7 +84,7 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
                   future: DefaultAssetBundle.of(context)
                       .loadString("assets/jsonlar/adres.json"),
                   builder: (context, snapshot) {
-                    log(snapshot.connectionState.toString());
+                    //log(snapshot.connectionState.toString());
                     if (snapshot.connectionState == ConnectionState.done &&
                         snapshot.hasData) {
                       final adresler =
@@ -102,7 +102,7 @@ class _AdreslerimScreenState extends State<AdreslerimScreen> {
                               child: Adres(
                                   tipi: adresler[index].title,
                                   adresi: adresler[index].adres,
-                                  kontrol: adresler[index].isselected),
+                                  kontrol: adresler[index].isselected) ,
                             );
                           });
                     } else {
