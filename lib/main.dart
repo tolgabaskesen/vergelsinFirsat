@@ -13,6 +13,7 @@ import 'package:vergelsinfirsat/screens/hesabim_screen.dart';
 import 'package:vergelsinfirsat/screens/iletisim_tercihleri.dart';
 import 'package:vergelsinfirsat/screens/odemeyontemi_screen.dart';
 import 'package:vergelsinfirsat/screens/popup_screen.dart';
+import 'package:vergelsinfirsat/screens/sepetim_screen.dart';
 import 'package:vergelsinfirsat/screens/sikca_sorulan_sorular_screen.dart';
 import 'package:vergelsinfirsat/screens/uruniptal_screen.dart';
 import 'package:vergelsinfirsat/utils/color.dart';
@@ -60,6 +61,7 @@ class MyApp extends StatelessWidget {
         "/hakkimizda": (context) => HakkimizdaScreen(),
         "/sikcasorulan": (context) => SikcaSorulanSorularScreen(),
         "/arama": (context) => AramaScreen(),
+        "/sepetim_screen": (context) => SepetimScreen(),
       },
     );
   }
@@ -176,6 +178,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 context,
                 "Arama Screen",
                 () => Navigator.pushNamed(context, "/arama"),
+              ),
+              sayfaGecis(
+                //Oluşturulan her sayfa için geçişler buraya button olarak aynı şekilde tanımlanacak.
+                context,
+                "Sepetim Screen",
+                () => Navigator.pushNamed(context, "/sepetim_screen"),
               ),
             ],
           ),
