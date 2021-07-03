@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vergelsinfirsat/screens/deneme_screen.dart';
@@ -12,6 +13,8 @@ class SepetimScreen extends StatefulWidget {
 }
 
 class _SepetimScreenState extends State<SepetimScreen> {
+  int index = 0;
+  int _current = 0;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -147,6 +150,32 @@ class _SepetimScreenState extends State<SepetimScreen> {
                 ),
               ),
               SizedBox(
+                height: size.height * 0.02,
+              ),
+              Container(
+                height: size.height * 0.25,
+                width: size.width,
+                child: CarouselSlider(
+                  options: CarouselOptions(
+                    initialPage: 0,
+                    /* onPageChanged: () {
+                      setState(() {
+                        _current = index;
+                      });
+                    }, */
+                    autoPlay: false,
+                    aspectRatio: 2.0,
+                    enlargeCenterPage: true,
+                  ),
+                  items: [
+                    altCatalog(),
+                    altCatalog(),
+                    altCatalog(),
+                    altCatalog(),
+                  ],
+                ),
+              ),
+              SizedBox(
                 height: size.height * 0.15,
               ),
             ],
@@ -154,6 +183,10 @@ class _SepetimScreenState extends State<SepetimScreen> {
         ),
       ),
     );
+  }
+
+  Widget altCatalog() {
+    return Container();
   }
 
   Widget sepettekiUrun(BuildContext context, String tur) {
