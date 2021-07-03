@@ -186,6 +186,7 @@ class _AramaScreenState extends State<AramaScreen> {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(8),
         child: Container(
+          color: Colors.white,
           height: size.height * 0.28,
           alignment: Alignment.center,
           child: Column(
