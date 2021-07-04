@@ -1,0 +1,83 @@
+[
+    {
+        "indirim_miktarı": "600",
+        "indirim_oran": "40",
+        "urun": "assets/adres/telefon.jpg",
+        "urun_adi": "Lorem Ipsum is simply dummy text",
+        "indirimsiz_fiyat": "99.99",
+        "indirimli_fiyat": "77.77",
+        "isoy": false
+    },
+    {
+        "indirim_miktarı": "600",
+        "indirim_oran": "40",
+        "urun": "assets/adres/telefon.jpg",
+        "urun_adi": "Lorem Ipsum is simply dummy text",
+        "indirimsiz_fiyat": "99.99",
+        "indirimli_fiyat": "77.77",
+        "isoy": true
+    },
+    {
+        "indirim_miktarı": "600",
+        "indirim_oran": "40",
+        "urun": "assets/adres/telefon.jpg",
+        "urun_adi": "Lorem Ipsum is simply dummy text",
+        "indirimsiz_fiyat": "99.99",
+        "indirimli_fiyat": "77.77",
+        "isoy": false
+    },
+    {
+        "indirim_miktarı": "600",
+        "indirim_oran": "40",
+        "urun": "assets/adres/telefon.jpg",
+        "urun_adi": "Lorem Ipsum is simply dummy text",
+        "indirimsiz_fiyat": "99.99",
+        "indirimli_fiyat": "77.77",
+        "isoy": false
+    },
+    {
+        "indirim_miktarı": "600",
+        "indirim_oran": "40",
+        "urun": "assets/adres/telefon.jpg",
+        "urun_adi": "Lorem Ipsum is simply dummy text",
+        "indirimsiz_fiyat": "99.99",
+        "indirimli_fiyat": "77.77",
+        "isoy": false
+    },
+    {
+        "indirim_miktarı": "600",
+        "indirim_oran": "40",
+        "urun": "assets/adres/telefon.jpg",
+        "urun_adi": "Lorem Ipsum is simply dummy text",
+        "indirimsiz_fiyat": "99.99",
+        "indirimli_fiyat": "77.77",
+        "isoy": false
+    },
+    {
+        "indirim_miktarı": "600",
+        "indirim_oran": "40",
+        "urun": "assets/adres/telefon.jpg",
+        "urun_adi": "Lorem Ipsum is simply dummy text",
+        "indirimsiz_fiyat": "99.99",
+        "indirimli_fiyat": "77.77",
+        "isoy": false
+    },
+    {
+        "indirim_miktarı": "600",
+        "indirim_oran": "40",
+        "urun": "assets/adres/telefon.jpg",
+        "urun_adi": "Lorem Ipsum is simply dummy text",
+        "indirimsiz_fiyat": "99.99",
+        "indirimli_fiyat": "77.77",
+        "isoy": false
+    },
+    {
+        "indirim_miktarı": "600",
+        "indirim_oran": "40",
+        "urun": "assets/adres/telefon.jpg",
+        "urun_adi": "Lorem Ipsum is simply dummy text",
+        "indirimsiz_fiyat": "99.99",
+        "indirimli_fiyat": "77.77",
+        "isoy": false
+    }
+]
