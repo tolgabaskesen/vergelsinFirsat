@@ -158,11 +158,13 @@ class _SepetimScreenState extends State<SepetimScreen> {
                 child: CarouselSlider(
                   options: CarouselOptions(
                     initialPage: 0,
-                    /* onPageChanged: () {
+                    onPageChanged:
+                        (int index, CarouselPageChangedReason changedReason) {
                       setState(() {
                         _current = index;
+                        print(_current);
                       });
-                    }, */
+                    },
                     autoPlay: false,
                     aspectRatio: 2.0,
                     enlargeCenterPage: true,
@@ -176,6 +178,10 @@ class _SepetimScreenState extends State<SepetimScreen> {
                 ),
               ),
               SizedBox(
+                height: size.height * 0.02,
+              ),
+              altCatalogPageInd(),
+              SizedBox(
                 height: size.height * 0.15,
               ),
             ],
@@ -185,8 +191,210 @@ class _SepetimScreenState extends State<SepetimScreen> {
     );
   }
 
+  Widget altCatalogPageInd() {
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      height: size.height * 0.01,
+      width: size.width,
+      alignment: Alignment.center,
+      child: Container(
+        height: size.height * 0.01,
+        width: size.width * 0.5,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Icon(Icons.circle,
+                color: (_current == 0) ? ikincilRenk : Colors.grey),
+            Icon(Icons.circle,
+                color: (_current == 1) ? ikincilRenk : Colors.grey),
+            Icon(Icons.circle,
+                color: (_current == 2) ? ikincilRenk : Colors.grey),
+            Icon(Icons.circle,
+                color: (_current == 3) ? ikincilRenk : Colors.grey),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget altCatalog() {
-    return Container();
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      height: size.height * 0.20,
+      width: size.width * 0.8,
+      color: Colors.white,
+      child: Row(
+        children: [
+          Container(
+            height: size.height * 0.20,
+            width: size.width * 0.3,
+            child: Image.asset(
+              "assets/icons/sampuan.png",
+            ),
+          ),
+          Container(
+            height: size.height * 0.20,
+            width: size.width * 0.45,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  height: size.height * 0.06,
+                  width: size.width * 0.45,
+                  child: AutoSizeText(
+                    "Lorem Ipsum is simply dummy text",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                  ),
+                ),
+                Container(
+                  height: size.height * 0.06,
+                  width: size.width * 0.45,
+                  color: arkaplanRenk,
+                  alignment: Alignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        color: Colors.white,
+                        alignment: Alignment.center,
+                        height: size.height * 0.05,
+                        width: size.width * 0.10,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            AutoSizeText(
+                              "15",
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                              maxFontSize: 12,
+                              minFontSize: 8,
+                              style: TextStyle(
+                                  color: anaRenk, fontWeight: FontWeight.bold),
+                            ),
+                            AutoSizeText(
+                              "SAAT",
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                              maxFontSize: 12,
+                              minFontSize: 8,
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        color: Colors.white,
+                        alignment: Alignment.center,
+                        height: size.height * 0.05,
+                        width: size.width * 0.10,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            AutoSizeText(
+                              "15",
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                              maxFontSize: 12,
+                              minFontSize: 8,
+                              style: TextStyle(
+                                  color: anaRenk, fontWeight: FontWeight.bold),
+                            ),
+                            AutoSizeText(
+                              "SAAT",
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                              maxFontSize: 12,
+                              minFontSize: 8,
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        color: Colors.white,
+                        alignment: Alignment.center,
+                        height: size.height * 0.05,
+                        width: size.width * 0.10,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            AutoSizeText(
+                              "15",
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                              maxFontSize: 12,
+                              minFontSize: 8,
+                              style: TextStyle(
+                                  color: anaRenk, fontWeight: FontWeight.bold),
+                            ),
+                            AutoSizeText(
+                              "SAAT",
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                              maxFontSize: 12,
+                              minFontSize: 8,
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: size.height * 0.06,
+                  width: size.width * 0.45,
+                  child: Column(
+                    children: [
+                      AutoSizeText(
+                        "800.00 ₺",
+                        textAlign: TextAlign.center,
+                        maxLines: 1,
+                        style: TextStyle(
+                          color: anaRenk,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          AutoSizeText(
+                            "99.99 TL  ",
+                            textAlign: TextAlign.center,
+                            maxLines: 1,
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.bold,
+                              decoration: TextDecoration.lineThrough,
+                            ),
+                          ),
+                          AutoSizeText(
+                            "900₺ İndirim",
+                            textAlign: TextAlign.center,
+                            maxLines: 1,
+                            style: TextStyle(
+                              color: ikincilRenk,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
   }
 
   Widget sepettekiUrun(BuildContext context, String tur) {
