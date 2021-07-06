@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class Kategori extends StatefulWidget {
   final String kategoriadi;
-  const Kategori({Key? key, required this.kategoriadi}) : super(key: key);
+  final String ikon;
+  const Kategori({Key? key, required this.kategoriadi, required this.ikon})
+      : super(key: key);
 
   @override
   _KategoriState createState() => _KategoriState();
@@ -19,7 +21,7 @@ class _KategoriState extends State<Kategori> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Icon(Icons.set_meal_outlined),
+                child: Icon(IconData(int.parse("0x${widget.ikon}"))),
               ),
               Text(widget.kategoriadi),
             ],

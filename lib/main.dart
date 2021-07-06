@@ -11,6 +11,7 @@ import 'package:vergelsinfirsat/screens/hakkimizda_screen.dart';
 import 'package:vergelsinfirsat/screens/hesabim.dart';
 import 'package:vergelsinfirsat/screens/hesabim_screen.dart';
 import 'package:vergelsinfirsat/screens/iletisim_tercihleri.dart';
+import 'package:vergelsinfirsat/screens/kategorili_arama.dart';
 import 'package:vergelsinfirsat/screens/odemeyontemi_screen.dart';
 import 'package:vergelsinfirsat/screens/popup_screen.dart';
 import 'package:vergelsinfirsat/screens/sepetim_screen.dart';
@@ -62,6 +63,7 @@ class MyApp extends StatelessWidget {
         "/sikcasorulan": (context) => SikcaSorulanSorularScreen(),
         "/arama": (context) => AramaScreen(),
         "/sepetim_screen": (context) => SepetimScreen(),
+        "/kategorili_arama_screen": (context) => KategoriliAramaScreen(),
       },
     );
   }
@@ -184,6 +186,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 context,
                 "Sepetim Screen",
                 () => Navigator.pushNamed(context, "/sepetim_screen"),
+              ),
+              sayfaGecis(
+                //Oluşturulan her sayfa için geçişler buraya button olarak aynı şekilde tanımlanacak.
+                context,
+                "Kategorili Arama Sayfası",
+                () => Navigator.pushNamed(context, "/kategorili_arama_screen"),
               ),
             ],
           ),

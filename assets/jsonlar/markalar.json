@@ -1,0 +1,28 @@
+{
+    
+    "A":[
+        {"marka":"Apple","adet":"344"},
+        {"marka":"Arzum","adet":"325"},
+        {"marka":"Ankel","adet":"75"},
+        {"marka":"Adore","adet":"7"},
+        {"marka":"Asnem","adet":"87"},
+        {"marka":"Anstra","adet":"65"}
+    ],
+    "B":[
+        {"marka":"Apple","adet":"344"},
+        {"marka":"Arzum","adet":"325"},
+        {"marka":"Ankel","adet":"75"},
+        {"marka":"Adore","adet":"7"},
+        {"marka":"Asnem","adet":"87"},
+        {"marka":"Anstra","adet":"65"}
+    ],
+    "C":[
+        {"marka":"Apple","adet":"344"},
+        {"marka":"Arzum","adet":"325"},
+        {"marka":"Ankel","adet":"75"},
+        {"marka":"Adore","adet":"7"},
+        {"marka":"Asnem","adet":"87"},
+        {"marka":"Anstra","adet":"65"}
+    ]
+}
+
