@@ -107,7 +107,7 @@ class _IletisimScreenState extends State<IletisimScreen> {
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 color: arkaplanRenk,
-                height: size.height * 0.25,
+                height: size.height * 0.35,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 8),
                   child: GridView.count(
@@ -129,7 +129,7 @@ class _IletisimScreenState extends State<IletisimScreen> {
               ),
             ),
             SizedBox(
-              height: size.height * 0.15,
+              height: size.height * 0.08,
             )
           ],
         ),
