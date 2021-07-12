@@ -181,11 +181,13 @@ class _KacirilanFirsatScreenState extends State<KacirilanFirsatScreen> {
               ),
             ),
             CircularPercentIndicator(
+              fillColor: Colors.transparent,
+              backgroundColor: Color(0xFFECEFF1),
               radius: 160,
               lineWidth: 4,
               percent: yuzde,
               center: ClipRRect(
-                  borderRadius: BorderRadius.circular(70),
+                  borderRadius: BorderRadius.circular(75),
                   child: Container(
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
