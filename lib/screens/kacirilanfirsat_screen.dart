@@ -124,7 +124,6 @@ class _KacirilanFirsatScreenState extends State<KacirilanFirsatScreen> {
     final double itemWidth = size.width / 2;
     return Container(
         color: arkaplanRenk,
-        
         child: FutureBuilder(
             future: DefaultAssetBundle.of(context)
                 .loadString("assets/jsonlar/kacirilanfirsat_urun.json"),
@@ -186,11 +185,17 @@ class _KacirilanFirsatScreenState extends State<KacirilanFirsatScreen> {
               lineWidth: 4,
               percent: yuzde,
               center: ClipRRect(
-                  borderRadius: BorderRadius.circular(25),
-                  child: Image.asset(
-                    urun,
-                    width: size.width * 0.45,
-                    height: size.height * 0.15,
+                  borderRadius: BorderRadius.circular(70),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                    ),
+                    child: Image.asset(
+                      urun,
+                      width: size.width * 0.365,
+                      height: size.height * 0.219,
+                      fit: BoxFit.fitWidth,
+                    ),
                   )),
               progressColor: ikincilRenk,
             ),
