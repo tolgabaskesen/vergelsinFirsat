@@ -1,0 +1,44 @@
+[
+    {
+        "urun":"assets/adres/telefon.jpg",
+        "yuzde":0.40,
+        "urun_adi":"Sebze Yemekleri Paketi",
+        "satis_fiyati":"11.32",
+        "isoy":false
+    },
+    {
+        "urun":"assets/food/sogan.png",
+        "yuzde":0.65,
+        "urun_adi":"Sebze Yemekleri Paketi",
+        "satis_fiyati":"11.32",
+        "isoy":true
+    },
+    {
+        "urun":"assets/food/icetea.png",
+        "yuzde":0.40,
+        "urun_adi":"Sebze Yemekleri Paketi",
+        "satis_fiyati":"11.32",
+        "isoy":false
+    },
+    {
+        "urun":"assets/food/sogan.png",
+        "yuzde":0.65,
+        "urun_adi":"Sebze Yemekleri Paketi",
+        "satis_fiyati":"11.32",
+        "isoy":false
+    },
+    {
+        "urun":"assets/food/sogan.png",
+        "yuzde":0.30,
+        "urun_adi":"Sebze Yemekleri Paketi",
+        "satis_fiyati":"11.32",
+        "isoy":false
+    },
+    {
+        "urun":"assets/food/water.png",
+        "yuzde":0.55,
+        "urun_adi":"Sebze Yemekleri Paketi",
+        "satis_fiyati":"11.32",
+        "isoy":false
+    }
+]
